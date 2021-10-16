@@ -1,6 +1,6 @@
 using System;
 
-namespace UnitOfWork.Models
+namespace UnitOfWorkDemo.Models
 {
     public class User
     {

@@ -4,10 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using UnitOfWork.Data;
+using UnitOfWorkDemo.Configuration;
+using UnitOfWorkDemo.Data;
+using UnitOfWorkDemo.IRepositories;
 
-namespace UnitOfWork
+namespace UnitOfWorkDemo
 {
     public class Startup
     {
@@ -32,6 +35,9 @@ namespace UnitOfWork
                     Configuration.GetConnectionString("DefaultConnection")
                 ));
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddSingleton<LoggerFactory>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace UnitOfWork.Migrations
+namespace UnitOfWorkDemo.Migrations
 {
     public partial class InitialmigrationandAddingtheUsertable : Migration
     {
